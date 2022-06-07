@@ -1,6 +1,6 @@
-@use './styles/root/reset';
-@use './styles/root/colors';
-@use './styles/root/variables';
+@use 'constants/reset';
+@use 'constants/colors';
+@use 'constants/variables';
 
 * {
   font-family: Lato, sans-serif;

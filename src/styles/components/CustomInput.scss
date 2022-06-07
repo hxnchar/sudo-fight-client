@@ -1,5 +1,5 @@
-@use './src/styles/root/colors';
-@use './src/styles/root/variables';
+@use '../../constants/colors';
+@use '../../constants/variables';
 
 *:hover {
   cursor: text;
