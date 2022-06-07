@@ -1,10 +1,9 @@
 import React from 'react';
-import './App.css';
+import './index.scss';
+import CustomInput from './components/CustomInput';
 
 function App() {
-  return (
-    <></>
-  );
+  return <CustomInput label={'Username'} />;
 }
 
 export default App;

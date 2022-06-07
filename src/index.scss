@@ -1,0 +1,7 @@
+@use './styles/root/reset';
+@use './styles/root/colors';
+@use './styles/root/variables';
+
+* {
+  font-family: Lato, sans-serif;
+}

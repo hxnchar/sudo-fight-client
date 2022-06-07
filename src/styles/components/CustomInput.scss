@@ -1,0 +1,55 @@
+@use './src/styles/root/colors';
+@use './src/styles/root/variables';
+
+*:hover {
+  cursor: text;
+}
+
+label {
+  color: colors.$gray-color-2;
+  font-size: 1em;
+  left: 0.1em;
+  position: absolute;
+  transform: translate(0, 1.4em) scale(1);
+  transform-origin: top left;
+  transition: 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+input {
+  border: 0;
+  border-bottom: variables.$line-size-2 solid colors.$gray-color-2;
+  border-radius: variables.$border-radius-2 variables.$border-radius-2 variables.$border-radius-0
+    variables.$border-radius-0;
+  font-size: 1em;
+  height: 1.5em;
+  outline: none;
+  padding: 1.2em 1em 0.05em 0.1em;
+  transition: 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.has-text {
+  input {
+    border-bottom: 2px solid colors.$accent-color-7;
+  }
+
+  label {
+    color: colors.$accent-color-7;
+    transform: translate(0, 0.4em) scale(0.75);
+  }
+}
+
+.custom-input-container {
+  display: flex;
+  margin-left: 50px;
+  position: relative;
+
+  input:focus {
+    background-color: colors.$gray-color-1;
+    border-bottom: 2px solid colors.$accent-color-7;
+  }
+}
+
+.custom-input-container:focus-within label {
+  color: colors.$accent-color-7;
+  transform: translate(0, 0.4em) scale(0.75);
+}
