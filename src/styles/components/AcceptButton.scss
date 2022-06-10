@@ -1,0 +1,96 @@
+@use '../../constants/colors';
+@use '../../constants/variables';
+@use '../../constants/animations';
+
+button {
+  background-color: transparent;
+  border: 0;
+  border-radius: variables.$border-radius-1;
+  overflow: hidden;
+  padding: 12px 24px;
+  position: relative;
+  transition: 150ms linear;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::after {
+    background-color: rgb(0 0 0 / 5%);
+    border-radius: 25%;
+    content: '';
+    height: 0;
+    left: var(--pointer-x);
+    position: absolute;
+    top: var(--pointer-y);
+    transform: translate3d(-50%, -50%, 0);
+    transition: width animations.$animation-time-2 ease-in-out,
+      height animations.$animation-time-2 ease-in-out;
+    width: 0;
+  }
+
+  &:hover {
+    transition: 150ms linear;
+  }
+
+  &:active {
+    &::after {
+      height: 300px;
+      width: 300px;
+    }
+  }
+}
+
+.button-filled {
+  background-color: colors.$accent-color-7;
+  color: colors.$gray-color-0;
+
+  &:hover {
+    background-color: colors.$accent-color-8;
+  }
+
+  &.negative {
+    background-color: colors.$red-color-3;
+
+    &:hover {
+      background-color: colors.$red-color-4;
+    }
+  }
+}
+
+.button-outlined {
+  border: 2px solid colors.$accent-color-7;
+  color: colors.$accent-color-7;
+  padding: 10px 22px;
+
+  &:hover {
+    border-color: colors.$accent-color-8;
+    color: colors.$accent-color-8;
+  }
+
+  &.negative {
+    border-color: colors.$red-color-3;
+    color: colors.$red-color-3;
+
+    &:hover {
+      border-color: colors.$red-color-4;
+      color: colors.$red-color-4;
+    }
+  }
+}
+
+.button-transparent {
+  color: colors.$accent-color-7;
+
+  &:hover {
+    color: colors.$accent-color-8;
+  }
+
+  &.negative {
+    color: colors.$red-color-3;
+
+    &:hover {
+      color: colors.$red-color-4;
+    }
+  }
+}
