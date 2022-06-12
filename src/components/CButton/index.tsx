@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import '../styles/components/AcceptButton.scss';
+import './CButton.scss';
 
 interface IButton {
   children?: ReactNode;
@@ -13,7 +13,7 @@ enum ButtonType {
   Transparent,
 }
 
-const AcceptButton = ({ children, type, isNegative, ...props }: IButton) => {
+const CButton = ({ children, type, isNegative, ...props }: IButton) => {
   const ref = React.createRef<HTMLButtonElement>();
   const onMouseDown = (e: React.MouseEvent<HTMLButtonElement>) => {
     ref.current?.style.setProperty('--pointer-x', `${e.nativeEvent.offsetX}px`);
@@ -51,4 +51,4 @@ const AcceptButton = ({ children, type, isNegative, ...props }: IButton) => {
   );
 };
 
-export default AcceptButton;
+export default CButton;

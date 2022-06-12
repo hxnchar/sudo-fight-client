@@ -1,7 +1,7 @@
 import React, { FC, InputHTMLAttributes, useState } from 'react';
-import '../styles/components/CustomInput.scss';
+import './CInput.scss';
 
-const CustomInput: FC<InputProps> = ({ label, ...props }) => {
+const Index = ({ label, ...props }: InputProps) => {
   const [text, setText] = useState('');
 
   const onTextChange = (e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value);
@@ -20,4 +20,4 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
 }
 
-export default CustomInput;
+export default Index;
