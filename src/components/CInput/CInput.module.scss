@@ -38,7 +38,7 @@ input {
   }
 }
 
-.custom-input-container {
+.container {
   display: flex;
   margin-left: 50px;
   position: relative;
@@ -49,7 +49,7 @@ input {
   }
 }
 
-.custom-input-container:focus-within label {
+.container:focus-within label {
   color: colors.$accent-color-7;
   transform: translate(0, 0.4em) scale(0.75);
 }

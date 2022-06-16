@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import './CButton.scss';
+import styles from './CButton.module.scss';
 
 interface IButton {
   children?: ReactNode;
@@ -7,7 +7,7 @@ interface IButton {
   isNegative?: boolean;
 }
 
-enum ButtonType {
+export enum ButtonType {
   Filled,
   Outlined,
   Transparent,
@@ -26,16 +26,16 @@ const CButton = ({ children, type, isNegative, ...props }: IButton) => {
   let buttonClass;
   switch (type) {
     case ButtonType.Filled:
-      buttonClass = 'button-filled';
+      buttonClass = styles['button-filled'];
       break;
     case ButtonType.Outlined:
-      buttonClass = 'button-outlined';
+      buttonClass = styles['button-outlined'];
       break;
     case ButtonType.Transparent:
-      buttonClass = 'button-transparent';
+      buttonClass = styles['button-transparent'];
       break;
     default:
-      buttonClass = 'button-filled';
+      buttonClass = styles['button-filled'];
       break;
   }
   return (

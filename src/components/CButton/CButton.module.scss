@@ -46,7 +46,7 @@ button {
   color: colors.$gray-color-0;
 
   &:hover {
-    background-color: colors.$accent-color-8;
+    background-color: colors.$accent-color-75;
   }
 
   &.negative {
@@ -64,8 +64,8 @@ button {
   padding: 10px 22px;
 
   &:hover {
-    border-color: colors.$accent-color-8;
-    color: colors.$accent-color-8;
+    border-color: colors.$accent-color-75;
+    color: colors.$accent-color-75;
   }
 
   &.negative {
@@ -83,7 +83,7 @@ button {
   color: colors.$accent-color-7;
 
   &:hover {
-    color: colors.$accent-color-8;
+    color: colors.$accent-color-75;
   }
 
   &.negative {

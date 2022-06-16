@@ -1,5 +1,5 @@
-import React, { FC, InputHTMLAttributes, useState } from 'react';
-import './CInput.scss';
+import React, { InputHTMLAttributes, useState } from 'react';
+import styles from './CInput.module.scss';
 
 const Index = ({ label, ...props }: InputProps) => {
   const [text, setText] = useState('');
@@ -9,7 +9,7 @@ const Index = ({ label, ...props }: InputProps) => {
   const onClickInput = () => document.getElementById('input')?.focus();
 
   return (
-    <div className={`custom-input-container ${text ? 'has-text' : ''}`} onClick={onClickInput}>
+    <div className={`${styles.container} ${text ? styles['has-text'] : ''}`} onClick={onClickInput}>
       <label>{label}</label>
       <input {...props} onChange={onTextChange} id="input" />
     </div>
