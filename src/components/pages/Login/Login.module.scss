@@ -1,0 +1,57 @@
+@use '../../../constants/colors';
+@use '../../../constants/variables';
+@use '../../../constants/animations';
+
+.container {
+  align-items: center;
+  background-color: colors.$accent-color-1;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+form {
+  align-items: center;
+  background-color: colors.$accent-color-0;
+  border-radius: variables.$border-radius-2;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  justify-content: space-around;
+  padding: variables.$padding-25 variables.$padding-50;
+  width: clamp(300px, 25%, 400px);
+}
+
+.inputs {
+  * {
+    margin-top: 2px;
+  }
+}
+
+a {
+  color: colors.$gray-color-3;
+  text-decoration: none;
+
+  &:visited,
+  &:link,
+  a:active {
+    color: colors.$gray-color-3;
+  }
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.forgot-password {
+  font-size: 0.8em;
+}
+
+.elements-inline {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
