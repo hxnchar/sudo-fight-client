@@ -1,19 +1,19 @@
-import React, { ReactNode } from 'react';
+import React, { ComponentProps, ReactNode } from 'react';
 import styles from './CButton.module.scss';
 
 interface IButton {
   children?: ReactNode;
-  type: ButtonType;
+  decor: ButtonDecor;
   isNegative?: boolean;
 }
 
-export enum ButtonType {
+export enum ButtonDecor {
   Filled,
   Outlined,
   Transparent,
 }
 
-const CButton = ({ children, type, isNegative, ...props }: IButton) => {
+const CButton = ({ children, decor, isNegative, ...props }: IButton & ComponentProps<'button'>) => {
   const ref = React.createRef<HTMLButtonElement>();
   const onMouseDown = (e: React.MouseEvent<HTMLButtonElement>) => {
     ref.current?.style.setProperty('--pointer-x', `${e.nativeEvent.offsetX}px`);
@@ -24,14 +24,14 @@ const CButton = ({ children, type, isNegative, ...props }: IButton) => {
     ref.current?.style.setProperty('--pointer-x', `${e.nativeEvent.offsetX}px`);
   };
   let buttonClass;
-  switch (type) {
-    case ButtonType.Filled:
+  switch (decor) {
+    case ButtonDecor.Filled:
       buttonClass = styles['button-filled'];
       break;
-    case ButtonType.Outlined:
+    case ButtonDecor.Outlined:
       buttonClass = styles['button-outlined'];
       break;
-    case ButtonType.Transparent:
+    case ButtonDecor.Transparent:
       buttonClass = styles['button-transparent'];
       break;
     default:
@@ -40,10 +40,10 @@ const CButton = ({ children, type, isNegative, ...props }: IButton) => {
   }
   return (
     <button
-      className={`${buttonClass} ${isNegative ? 'negative' : ''}`}
-      {...props}
+      className={`${buttonClass} ${isNegative ? styles.negative : ''}`}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
+      {...props}
       ref={ref}
     >
       {children}

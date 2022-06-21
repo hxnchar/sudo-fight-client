@@ -1,9 +1,5 @@
-@use '../../constants/colors';
-@use '../../constants/variables';
-
-*:hover {
-  cursor: text;
-}
+@use '../../../constants/colors';
+@use '../../../constants/variables';
 
 label {
   color: colors.$gray-color-2;
@@ -21,7 +17,7 @@ input {
   border-radius: variables.$border-radius-2 variables.$border-radius-2 variables.$border-radius-0
     variables.$border-radius-0;
   font-size: 1em;
-  height: 1.5em;
+  height: 3em;
   outline: none;
   padding: 1.2em 1em 0.05em 0.1em;
   transition: 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
@@ -42,6 +38,10 @@ input {
   display: flex;
   margin-left: 50px;
   position: relative;
+
+  *:hover {
+    cursor: text;
+  }
 
   input:focus {
     background-color: colors.$gray-color-1;
