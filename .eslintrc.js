@@ -19,14 +19,18 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    'max-len': ['error', { 'code': 120 }],
+    'max-len': ['error', { code: 120 }],
   },
   overrides: [
     {
-      files: [
-        '*.ts',
-        '*.tsx'
-      ],
-    }
+      files: ['*.ts', '*.tsx'],
+    },
   ],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
 };
