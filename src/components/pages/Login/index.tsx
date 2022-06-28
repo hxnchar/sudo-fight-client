@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Login.module.scss';
-import CInput from 'components/basic/CInput';
-import CButton, { ButtonDecor } from 'components/basic/CButton';
+import { CInput } from 'components';
+import { CButton } from 'components';
 
 const Login = () => {
   const onSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
@@ -19,7 +19,7 @@ const Login = () => {
             Forgot Password
           </a>
         </div>
-        <CButton decor={ButtonDecor.Filled}>Login</CButton>
+        <CButton decor={'filled'}>Login</CButton>
         <div className={styles['elements-inline']}>
           <p>Not a member yet?</p>
           <a href="sign-up">Sign Up</a>
