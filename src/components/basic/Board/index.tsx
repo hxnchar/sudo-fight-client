@@ -60,7 +60,10 @@ const Board = () => {
           is-selected={'false'}
           hint-num={'false'}
           key={`${globalRow};${globalColumn}`}
-        ></div>,
+        >
+          {j + 1}
+          {/*TODO paste value from matrix*/}
+        </div>,
       );
     }
     cellsArray.push(
