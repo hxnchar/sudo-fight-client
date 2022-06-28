@@ -1,16 +1,18 @@
 import React, { ComponentProps, ReactNode } from 'react';
 import styles from './CButton.module.scss';
 
+const Decor = {
+  filled: styles.buttonFilled,
+  outlined: styles.buttonOutlined,
+  transparent: styles.buttonTransparent,
+};
+
+export type ButtonDecor = keyof typeof Decor;
+
 interface IButton {
   children?: ReactNode;
   decor: ButtonDecor;
   isNegative?: boolean;
-}
-
-export enum ButtonDecor {
-  Filled,
-  Outlined,
-  Transparent,
 }
 
 const CButton = ({ children, decor, isNegative, ...props }: IButton & ComponentProps<'button'>) => {
@@ -23,24 +25,9 @@ const CButton = ({ children, decor, isNegative, ...props }: IButton & ComponentP
     ref.current?.style.setProperty('--pointer-y', `${e.nativeEvent.offsetY}px`);
     ref.current?.style.setProperty('--pointer-x', `${e.nativeEvent.offsetX}px`);
   };
-  let buttonClass;
-  switch (decor) {
-    case ButtonDecor.Filled:
-      buttonClass = styles['button-filled'];
-      break;
-    case ButtonDecor.Outlined:
-      buttonClass = styles['button-outlined'];
-      break;
-    case ButtonDecor.Transparent:
-      buttonClass = styles['button-transparent'];
-      break;
-    default:
-      buttonClass = styles['button-filled'];
-      break;
-  }
   return (
     <button
-      className={`${buttonClass} ${isNegative ? styles.negative : ''}`}
+      className={`${Decor[decor]} ${isNegative ? styles.negative : ''}`}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       {...props}
