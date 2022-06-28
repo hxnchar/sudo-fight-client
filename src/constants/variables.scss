@@ -1,4 +1,5 @@
-$line-size-1: 0;
+$line-size-0: 0;
+$line-size-05: 0.5px;
 $line-size-1: 1px;
 $line-size-2: 2px;
 $line-size-3: 3px;
@@ -13,10 +14,14 @@ $border-radius-4: 20px;
 $border-radius-5: 25px;
 
 $padding-0: 0;
-$padding-1: 5px;
-$padding-2: 10px;
-$padding-3: 15px;
-$padding-4: 20px;
-$padding-5: 25px;
+$padding-5: 5px;
+$padding-10: 10px;
+$padding-20: 20px;
+$padding-25: 25px;
+$padding-30: 30px;
+$padding-40: 40px;
+$padding-50: 50px;
+
+$cell-size: 40px;
 
 $loader-size: 200px;
