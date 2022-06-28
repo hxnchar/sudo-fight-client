@@ -1,0 +1,71 @@
+@use '../../../constants/colors';
+@use '../../../constants/variables';
+
+.container {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: calc(9 * 40px);
+  margin: 50px;
+  width: calc(9 * 40px);
+}
+
+.big-cell {
+  border-left: variables.$line-size-2 solid colors.$accent-color-8;
+  border-top: variables.$line-size-2 solid colors.$accent-color-8;
+  box-sizing: content-box;
+  display: grid;
+  grid-template: inherit;
+  height: calc(3 * 40px);
+  width: calc(3 * 40px);
+
+  &:nth-child(-n + 3) {
+    border-top: 0;
+  }
+
+  &:nth-child(3n + 1) {
+    border-left: 0;
+  }
+}
+
+.cell {
+  align-items: center;
+  background-color: colors.$accent-color-1;
+  border-left: variables.$line-size-1 solid colors.$accent-color-6;
+  border-top: variables.$line-size-1 solid colors.$accent-color-6;
+  box-sizing: content-box;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  user-select: none;
+  width: 40px;
+
+  &:nth-child(-n + 3) {
+    border-top: 0;
+  }
+
+  &:nth-child(3n + 1) {
+    border-left: 0;
+  }
+
+  &:hover {
+    background-color: colors.$accent-color-2;
+  }
+
+  &:focus {
+    background-color: colors.$accent-color-3;
+  }
+
+  &[is-highlighted='true'] {
+    background-color: colors.$accent-color-2;
+  }
+
+  &[nums-hint='true'] {
+    background-color: colors.$accent-color-3;
+  }
+
+  &[is-selected='true'] {
+    background-color: colors.$accent-color-4;
+  }
+}
