@@ -1,6 +1,10 @@
 import React, { ComponentProps, InputHTMLAttributes, useState } from 'react';
 import styles from './CInput.module.scss';
 
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  label: string;
+}
+
 const Index = ({ label, ...props }: InputProps & ComponentProps<'input'>) => {
   const [text, setText] = useState('');
   const ref = React.createRef<HTMLInputElement>();
@@ -15,9 +19,5 @@ const Index = ({ label, ...props }: InputProps & ComponentProps<'input'>) => {
     </div>
   );
 };
-
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-}
 
 export default Index;
