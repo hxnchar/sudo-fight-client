@@ -2,12 +2,12 @@ import React, { ComponentProps, ReactNode } from 'react';
 import styles from './CButton.module.scss';
 
 const Decor = {
-  filled: styles.buttonFilled,
-  outlined: styles.buttonOutlined,
-  transparent: styles.buttonTransparent,
+  filled: styles['button-filled'],
+  outlined: styles['button-outlined'],
+  transparent: styles['button-transparent'],
 };
 
-export type ButtonDecor = keyof typeof Decor;
+type ButtonDecor = keyof typeof Decor;
 
 interface IButton {
   children?: ReactNode;
