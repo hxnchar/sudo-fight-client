@@ -1,0 +1,24 @@
+@use '../../../constants/colors';
+@use '../../../constants/variables';
+@use '../../../constants/animations';
+
+.container {
+  align-items: center;
+  background-color: colors.$accent-color-1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+h1 {
+  color: colors.$accent-color-8;
+  font-size: 300%;
+}
+
+h2 {
+  color: colors.$accent-color-8;
+  font-size: 150%;
+  margin: variables.$padding-10 0 variables.$padding-25 0;
+}
