@@ -10,11 +10,10 @@ const Login = () => {
   };
   return (
     <div className={styles.container}>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} role={'form'}>
         <h1>Registration</h1>
         <div className={styles.inputs}>
-          <CInput label={'First name'} />
-          <CInput label={'Last name'} />
+          <CInput label={'Username'} />
           <CInput label={'Email'} />
           <CInput label={'Password'} type={'password'} />
           <CInput label={'Confirm password'} type={'password'} />

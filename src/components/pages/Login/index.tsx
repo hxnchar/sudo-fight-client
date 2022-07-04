@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Login.module.scss';
-import { CInput } from 'components';
-import { CButton } from 'components';
+import { CInput, CButton } from 'components';
 
 const Login = () => {
   const onSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
@@ -10,7 +9,7 @@ const Login = () => {
   };
   return (
     <div className={styles.container}>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} role={'form'}>
         <h1>Welcome</h1>
         <div className={styles.inputs}>
           <CInput label={'Username'} />
