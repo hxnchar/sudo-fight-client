@@ -9,5 +9,4 @@ const Error = () =>
     <CButton decor={'filled'}>Return to home</CButton>
   </div>
 ;
-
 export default Error;
