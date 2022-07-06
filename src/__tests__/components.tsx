@@ -1,7 +1,8 @@
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
-import { CButton } from 'components';
+import { CButton, CInput } from 'components';
 import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 
 describe('Button component test', () => {
   test('Structure is correct', () => {
@@ -31,3 +32,20 @@ describe('Button component test', () => {
   afterEach(cleanup);
 });
 
+describe('Input component test', () => {
+  test('Structure is correct', () => {
+    render(<CInput label={'Username'}/>);
+    expect(screen.getByTestId('label-elem')).toBeInTheDocument();
+    expect(screen.getByTestId('input-elem')).toBeInTheDocument();
+  });
+  test('Behaviour is correct', async () => {
+    render(<CInput label={'Username'}/>);
+    const labelElem = screen.getByTestId('label-elem');
+    const input = screen.getByTestId('container-elem');
+    expect(labelElem).not.toHaveClass('has-text');
+    userEvent.click(input);
+    await userEvent.type(screen.getByTestId('input-elem'), 'Behaviour is correct');
+    expect(input).toHaveClass('has-text');
+  });
+  afterEach(cleanup);
+});
