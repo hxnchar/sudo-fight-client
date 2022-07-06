@@ -13,9 +13,18 @@ const Index = ({ label, ...props }: InputProps & ComponentProps<'input'>) => {
   const onClickInput = () => ref.current?.focus();
 
   return (
-    <div className={`${styles.container} ${text ? styles['has-text'] : ''}`} onClick={onClickInput}>
-      <label>{label}</label>
-      <input placeholder={label} {...props} onChange={onTextChange} id="input" ref={ref} />
+    <div
+      className={`${styles.container} ${text ? styles['has-text'] : ''}`}
+      onClick={onClickInput}
+      data-testid={'container-elem'}>
+      <label data-testid={'label-elem'}>{label}</label>
+      <input
+        placeholder={label} {...props}
+        onChange={onTextChange}
+        id="input"
+        ref={ref}
+        data-testid={'input-elem'}
+      />
     </div>
   );
 };

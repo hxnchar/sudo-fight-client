@@ -60,6 +60,7 @@ const Board = () => {
           is-selected={'false'}
           hint-num={'false'}
           key={`${globalRow};${globalColumn}`}
+          data-testid={'small-cell'}
         >
           {j + 1}
           {/*TODO paste value from matrix*/}
@@ -67,13 +68,20 @@ const Board = () => {
       );
     }
     cellsArray.push(
-      <div className={styles['big-cell']} key={`${i}`}>
+      <div
+        className={styles['big-cell']}
+        key={`${i}`}
+      >
         {tempArray}
       </div>,
     );
   }
   return (
-    <div className={styles.container} ref={ref}>
+    <div
+      className={styles.container}
+      ref={ref}
+      data-testid={'container-elem'}
+    >
       {cellsArray}
     </div>
   );
