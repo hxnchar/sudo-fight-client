@@ -7,5 +7,6 @@ module.exports = {
   ],
   rules: {
     'max-nesting-depth': 5,
+    'color-function-notation': null
   },
 };
