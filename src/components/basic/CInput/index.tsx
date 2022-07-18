@@ -1,15 +1,13 @@
-import React, { ComponentProps, InputHTMLAttributes, useState } from 'react';
+import React, { ComponentProps, useState } from 'react';
 import styles from './CInput.module.scss';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends Omit<ComponentProps<'input'>, 'placeholder'> {
   label: string;
 }
 
-const Index = ({ label, ...props }: InputProps & ComponentProps<'input'>) => {
+const Index = ({ label, ...props }: InputProps) => {
   const [text, setText] = useState('');
   const ref = React.createRef<HTMLInputElement>();
-  const onTextChange = (e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value);
-
   const onClickInput = () => ref.current?.focus();
 
   return (
@@ -19,9 +17,12 @@ const Index = ({ label, ...props }: InputProps & ComponentProps<'input'>) => {
       data-testid={'container-elem'}>
       <label data-testid={'label-elem'}>{label}</label>
       <input
-        placeholder={label} {...props}
-        onChange={onTextChange}
-        id="input"
+        {...props}
+        placeholder={label}
+        onChange={(e) => {
+          setText(e.target.value);
+          props.onChange && props.onChange(e);
+        }}
         ref={ref}
         data-testid={'input-elem'}
       />
