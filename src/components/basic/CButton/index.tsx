@@ -32,7 +32,6 @@ const CButton = ({ children, decor, isNegative, ...props }: IButton & ComponentP
       onMouseUp={onMouseUp}
       {...props}
       ref={ref}
-      data-testid={'btn-elem'}
     >
       {children}
     </button>

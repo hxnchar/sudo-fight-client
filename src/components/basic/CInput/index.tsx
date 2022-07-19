@@ -15,7 +15,7 @@ const Index = ({ label, ...props }: InputProps) => {
       className={`${styles.container} ${text ? styles['has-text'] : ''}`}
       onClick={onClickInput}
       data-testid={'container-elem'}>
-      <label data-testid={'label-elem'}>{label}</label>
+      <label>{label}</label>
       <input
         {...props}
         placeholder={label}
@@ -24,7 +24,6 @@ const Index = ({ label, ...props }: InputProps) => {
           props.onChange && props.onChange(e);
         }}
         ref={ref}
-        data-testid={'input-elem'}
       />
     </div>
   );
