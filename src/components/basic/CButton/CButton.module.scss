@@ -10,6 +10,7 @@ button {
   padding: 12px 24px;
   position: relative;
   transition: 150ms linear;
+  user-select: none;
 
   &:focus {
     outline: none;
@@ -30,6 +31,7 @@ button {
   }
 
   &:hover {
+    cursor: pointer;
     transition: 150ms linear;
   }
 
