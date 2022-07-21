@@ -1,0 +1,115 @@
+@use '../../../constants/colors';
+@use '../../../constants/variables';
+@use '../../../constants/animations';
+
+* {
+  color: colors.$accent-color-7;
+}
+
+.container {
+  align-items: center;
+  background-color: colors.$accent-color-1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+img {
+  border-radius: 50%;
+  height: variables.$photo-size-3;
+  outline: variables.$line-size-2 solid colors.$accent-color-7;
+  width: variables.$photo-size-3;
+}
+
+h1 {
+  color: colors.$accent-color-8;
+  font-size: variables.$font-size-7;
+  font-weight: initial;
+  text-align: center;
+  text-transform: initial;
+}
+
+h2 {
+  color: colors.$accent-color-8;
+  font-size: variables.$font-size-6;
+  text-align: center;
+}
+
+hr {
+  background-color: colors.$accent-color-7;
+  height: variables.$line-size-1;
+  width: 80vw;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  font-size: 130%;
+  justify-content: space-evenly;
+}
+
+.positive {
+  color: colors.$green-color-2;
+}
+
+.negative {
+  color: colors.$red-color-3;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+b {
+  color: colors.$accent-color-7;
+  font-size: variables.$font-size-6;
+  font-weight: bolder;
+  margin: variables.$padding-10;
+}
+
+.nickname {
+  @extend h1;
+
+  margin: variables.$indent-3 0 variables.$indent-3 0;
+}
+
+.winrate {
+  @extend .horizontal;
+
+  > * {
+    margin-left: variables.$indent-5;
+  }
+
+  > :first-child {
+    margin-left: 0;
+  }
+}
+
+.data {
+  @extend .vertical;
+
+  > * {
+    margin-top: variables.$indent-4;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+.result {
+  @extend .vertical;
+
+  p {
+    margin-top: variables.$indent--3;
+  }
+}

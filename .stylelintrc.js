@@ -7,6 +7,7 @@ module.exports = {
   ],
   rules: {
     'max-nesting-depth': 5,
-    'color-function-notation': null
+    'color-function-notation': null,
+    'scss/at-extend-no-missing-placeholder': null
   },
 };
