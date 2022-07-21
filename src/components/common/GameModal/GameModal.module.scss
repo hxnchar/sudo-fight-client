@@ -1,0 +1,37 @@
+@use '../../../constants/colors';
+@use '../../../constants/variables';
+@use '../../../constants/animations';
+
+.container {
+  align-items: center;
+  border: variables.$line-size-1 solid colors.$accent-color-7;
+  border-radius: variables.$border-radius-1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: variables.$padding-5;
+  user-select: none;
+}
+
+.h1 {
+  all: unset;
+  font-weight: bold;
+}
+
+.player {
+  cursor: pointer;
+
+  > * {
+    margin-left: variables.$indent-2;
+    transition: 150ms linear;
+  }
+
+  &:hover > * {
+    color: colors.$accent-color-75;
+    transition: 150ms linear;
+  }
+
+  :first-child {
+    margin-left: 0;
+  }
+}
